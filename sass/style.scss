@@ -1,7 +1,328 @@
-@import 'variables';
-@import 'mixins';
-@import 'normalize';
-@import 'layout';
+/* Variables */
 
+/* Colors */
+$nav-background: #000000;
+$nav-letters-1: #ffffff;
+$nav-letters-2: #e8ebec;
+$second-background: #e0e2e4;
+$letters: #aca9a9; 
+$buttons: #ffa600;
+
+
+/* Font sizes */
+$paragraph-font-size: 16px; 
+
+/* Fonts */
+$paragraph-font: 'Roboto', sans-serif;
+$brand-font-1: 'Caveat Brush', cursive;
+$brand-font-2: 'Paprika', cursive;
+$brand-font-3: 'Shadows Into Light Two', cursive;
+
+$transition: all 1s;
+
+/* Globals */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-size: $paragraph-font-size;
+    line-height: 1.7;
+    font-family: $paragraph-font;
+    color: $letters;
+}
+
+.main-container {
+    display: flex;
+    margin: 0 auto;
+}
+
+/* navigation */
+
+.nav {
+    background: $nav-background;
+    height: auto;
+    position: relative;
+}
+
+.name-wrapper {
+    color: $nav-letters-1;
+    font-family: $brand-font-2;
+    font-size: 16px;
+    position: absolute;
+    left: 15%;
+    font-style: italic;
+}
+
+.web-wrapper {
+    display: flex;
+    position: relative;
+    height: 400px;
+    border: 2px solid red;
+   
+    ul {
+        list-style-type: none;
+
+        .main-icon {
+            position: absolute;
+            color: $nav-letters-2;
+            font-size: 16px;
+            left: 80%;
+            top: 20px;
+
+            i {
+                color: $nav-letters-2;
+            }
+
+            &:hover {
+                ul {
+                    display: block;
+                }
+            }
+        }
+
+        ul {
+            position: absolute;
+            transform: translateX(-80%);
+            margin: 10px 0 20px 0;
+            padding: 0;
+            border: 2px solid green;
+            width: 200px;
+            display: none;
+        
+
+            li {
+                border: 2px solid yellow;
+                margin: 0 0 5px 0;
+                padding: 5px 0 5px 10px;
+                position: relative;
+
+                a {
+                    font-size: 14px;
+                    text-decoration: none;
+                    color: $nav-letters-2;
+
+                }
+    
+                span {
+                    margin: 0 20px 20px 0;
+
+                }
+            }
+
+            li:after {
+                content: "";
+                position: absolute;
+                background-color: $letters;
+                opacity: 0.2;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                display: none;
+            }
+
+            li:hover::after{
+                display: block;
+                cursor: pointer;
+                transition: $transition;
+            }
+        }
+    }
+}
+
+/* Content */
+
+/* Container 1 */
+
+.content {
+    background: $second-background;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container-1 {
+    height: 50px;
+    background-color: $nav-letters-1;
+    display: flex;
+    flex-direction: row;
+}
+
+.box-1 {
+    flex: 6.8;
+    border-right: 1px solid $second-background;
+    display: flex;
+    flex-direction: row;
+
+    .wallet {
+        height: 50px;
+        margin: 40px;
+        padding: 15px;
+    }
+}
+
+
+.box-2 {
+    flex: 2;
+    margin: 0 auto;
+    border-right: 1px solid $second-background;
+    display: flex;
+    flex-direction: row;
+
+    .wallet {
+        margin: 15px 10px 15px 15px;
+        display: flex;
+        flex-direction: center;
+
+        i {
+            color: $letters;
+            font-size: 16px;
+            margin: 0 auto;
+        }
+    }
+
+    .cash {
+        margin: 10px 10px;
+        font-weight: bold;
+    }
+
+    .menu {
+        margin: 15px 15px 15px 10px;
+        display: flex;
+        flex-direction: center;
+        text-decoration: none;
+
+        i {
+            color: $letters;
+            font-size: 16px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.box-3 {
+    flex: 0.6;
+    border-right: 1px solid $second-background;
+    margin: 0;
+    padding: 0;
+
+    .bell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-decoration: none;
+       
+        i {
+            color: $letters;
+            font-size: 16px;
+        }
+    }
+}
+
+.box-4 {
+    flex: 2;
+    border-right: 1px solid $second-background;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+       
+
+    .user {
+        display: flex;
+        flex-direction: center;
+        text-decoration: none;
+        margin-right: 20px;
+
+        i {
+            color: $letters;
+            font-size: 16px;
+            margin: 0 auto;
+        }
+    }
+
+    .user-name {
+        font-size: 12px;
+        display: flex;
+        flex-direction: center;
+        text-decoration: none;
+        font-weight: bold; 
+    }
+
+}
+
+.box-5 {
+    flex: 0.6;
+    border-right: 1px solid $second-background;
+    margin: 0;
+    padding: 0;
+
+    .send {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-decoration: none;
+       
+        i {
+            color: $letters;
+            font-size: 16px;
+        }
+    }
+}
+
+/* Container 2 */
+
+.container-2 {
+    height: 600px;
+    background-color: $nav-letters-1;
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+}
+
+.section-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $second-background;
+
+    .title-wrapper {
+        font-size: 16px;
+        padding-left: 20px;
+        text-transform: uppercase;
+        font-weight: normal;
+        font-weight: bold;
+    }
+
+}
+
+.date-range {
+    flex: 2;
+}
+
+.statistic {
+    flex: 9;
+}
+
+
+
+.col-1 {flex: 8.333%;}
+.col-2 {flex: 16.667%;}
+.col-3 {flex: 25%;}
+.col-4 {flex: 33.333%;}
+.col-5 {flex: 41.667%;}
+.col-6 {flex: 50%;}
+.col-7 {flex: 58.333%;}
+.col-8 {flex: 66.667%;}
+.col-9 {flex: 75%;}
+.col-10 {flex: 83.333%;}
+.col-11 {flex: 91.667%;}
+.col-12 {flex: 100%;}
 
 

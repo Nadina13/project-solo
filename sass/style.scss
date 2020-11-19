@@ -5,26 +5,23 @@ $nav-background: #000000;
 $nav-letters-1: #ffffff;
 $nav-letters-2: #e8ebec;
 $second-background: #e0e2e4;
-$letters: #aca9a9; 
-$buttons: #ffa600;
-
+$list-background: #252525;
+$letters: #888585; 
+$buttons: #fc810e;
 
 /* Font sizes */
 $paragraph-font-size: 16px; 
 
 /* Fonts */
 $paragraph-font: 'Roboto', sans-serif;
-$brand-font-1: 'Caveat Brush', cursive;
-$brand-font-2: 'Paprika', cursive;
-$brand-font-3: 'Shadows Into Light Two', cursive;
-
-$transition: all 1s;
+$brand-font: 'Dancing Script', cursive;
 
 /* Globals */
 
 *, *::before, *::after {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     font-size: $paragraph-font-size;
@@ -36,6 +33,7 @@ body {
 .main-container {
     display: flex;
     margin: 0 auto;
+    max-width: 1140px;
 }
 
 /* navigation */
@@ -43,93 +41,111 @@ body {
 .nav {
     background: $nav-background;
     height: auto;
-    position: relative;
 }
 
-.name-wrapper {
+.header{
     color: $nav-letters-1;
-    font-family: $brand-font-2;
-    font-size: 16px;
-    position: absolute;
-    left: 15%;
-    font-style: italic;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+.name {
+    margin: 0;
+    padding: 10px 30px 10px 20px;
+    font-family: $brand-font;
+    font-size: 26px;
+    
 }
 
-.web-wrapper {
-    display: flex;
-    position: relative;
-    height: 400px;
-    border: 2px solid red;
-   
-    ul {
-        list-style-type: none;
+.hamburger {
+    padding: 10px;
+    margin: 0 0 0 10px;
 
-        .main-icon {
-            position: absolute;
-            color: $nav-letters-2;
-            font-size: 16px;
-            left: 80%;
-            top: 20px;
-
-            i {
-                color: $nav-letters-2;
-            }
-
-            &:hover {
-                ul {
-                    display: block;
-                }
-            }
-        }
-
-        ul {
-            position: absolute;
-            transform: translateX(-80%);
-            margin: 10px 0 20px 0;
-            padding: 0;
-            border: 2px solid green;
-            width: 200px;
-            display: none;
-        
-
-            li {
-                border: 2px solid yellow;
-                margin: 0 0 5px 0;
-                padding: 5px 0 5px 10px;
-                position: relative;
-
-                a {
-                    font-size: 14px;
-                    text-decoration: none;
-                    color: $nav-letters-2;
-
-                }
-    
-                span {
-                    margin: 0 20px 20px 0;
-
-                }
-            }
-
-            li:after {
-                content: "";
-                position: absolute;
-                background-color: $letters;
-                opacity: 0.2;
-                width: 100%;
-                height: 100%;
-                left: 0;
-                top: 0;
-                display: none;
-            }
-
-            li:hover::after{
-                display: block;
-                cursor: pointer;
-                transition: $transition;
-            }
-        }
+    a {
+        color: $nav-letters-2;
+        font-size: 14px;
     }
+}
+
+.list {
+    padding: 0 0 20px 0;
+    border-bottom: 0.5px solid $letters;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+        
+    li {
+        margin: 0;
+        padding: 5px 0 5px 20px;
+        width: 100%;
+        border-left: 5px solid transparent;
+        background: transparent;
+        transition: all .3s ease-in-out;
+
+        &.active {
+            border-color: $buttons;
+            background: $list-background;
+          }
+          
+        &:hover { 
+            border-color: $buttons;
+            background: $list-background;
+          }
+
+        a {
+            font-size: 14px;
+            text-decoration: none;
+            color: $nav-letters-2;
+        }
+
+        span {
+            margin: 0 20px 20px 0;
+        }
+
+    }
+
+}
+
+/* Manager */
+
+.manager-title {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.manager-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.image {
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 50%;
+    margin: 5px;
+    border: 1px solid $letters;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+.manager-name {
+    color: #63a8cf;
+    font-size: 14px;
 }
 
 /* Content */
@@ -279,14 +295,15 @@ body {
 /* Container 2 */
 
 .container-2 {
-    height: 600px;
     background-color: $nav-letters-1;
     display: flex;
     flex-direction: column;
     margin: 12px;
 }
 
-.section-title {
+/* Title */
+
+.title-container {
     flex: 1;
     display: flex;
     align-items: center;
@@ -302,13 +319,438 @@ body {
 
 }
 
-.date-range {
+/* Date */
+.date-container {
     flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid $second-background;
 }
 
-.statistic {
-    flex: 9;
+.date-range {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
 }
+
+.date-box-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 0 10px 0 0;
+    border: 1px solid $second-background;
+    border-radius: 3px;
+}
+
+.date-start {
+    padding: 5px 50px 5px 15px;
+    border-right: 1px solid $second-background;
+    font-size: 12px;
+    font-weight: bold;
+    color: $list-background;
+}
+
+.date-end {
+    padding: 5px 50px 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: $list-background;
+}
+
+.calendar {
+    color: $letters;
+    padding: 5px 10px 5px 5px;
+}
+
+
+.reload {
+    color: $nav-letters-1;
+    background-color: $buttons;
+    border-radius: 3px;
+    padding: 9px;
+}
+
+/* Statisctic */
+
+.statistic-container {
+    flex: 9;
+    justify-content: center;
+}
+
+/* Data container 1 */
+
+.data-container-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 20px 0 0 0;
+}
+
+.data-box-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; 
+    justify-content: space-between;
+    margin: 0 50px 0 0;
+    border-bottom: 1px solid $second-background;
+    width: 250px;
+}
+
+.visit-box {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+}
+
+.visit-numbers-box {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+ 
+
+.visit-signups {
+    font-weight: bold;
+}
+
+.visit-numbers {
+    padding: 5px;
+    font-weight: bold;
+    color: $list-background;
+}
+
+.data-box-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; 
+    justify-content: space-between;
+    margin: 0 30px 0 0;
+    border-bottom: 1px solid $second-background;
+    width: 250px;
+}
+
+.net-box {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+}
+
+.net-numbers-box {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+ 
+.net-deposit {
+    font-weight: bold;
+}
+
+.deposit-numbers {
+    padding: 5px;
+    font-weight: bold;
+    color: $list-background;
+}
+
+/* Data container 2 */
+
+.data-container-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 10px 0 0 0;
+}
+
+.data-box-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; 
+    justify-content: space-between;
+    margin: 0 50px 0 0;
+    border-bottom: 1px solid $second-background;
+    width: 250px;
+}
+
+.ftd-box {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+}
+
+.ftd-numbers-box {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+ 
+
+.ftd {
+    font-weight: bold;
+}
+
+.ftd-numbers {
+    padding: 5px;
+    font-weight: bold;
+    color: $list-background;
+}
+
+.data-box-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; 
+    justify-content: space-between;
+    margin: 0 30px 0 0;
+    border-bottom: 1px solid $second-background;
+    width: 250px;
+}
+
+.turn-box {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+}
+
+.turn-numbers-box {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+ 
+.turn-over {
+    font-weight: bold;
+}
+
+.turn-numbers {
+    padding: 5px;
+    font-weight: bold;
+    color: $list-background;
+}
+
+/* Data container 3 */
+
+.data-container-3 {
+    margin: 70px 0 0 180px;
+
+    .earnings-chart {
+        font-size: 16px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+}
+
+/* Data container 4 */
+
+.data-container-4 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 30px;
+    font-size: 14px;
+
+    .dot-box-1 {
+        display: flex;
+        flex-direction: row;
+        background: $second-background;
+        border-radius: 3px;
+        margin: 0 40px 0 0;
+        padding: 0;
+
+        .blue {
+            color: #80c5ec;
+            padding: 5px 10px;
+        }
+
+        .dot-signups {
+            padding: 5px 10px 5px 0;
+        }
+    }
+
+    .dot-box-2 {
+        display: flex;
+        flex-direction: row;
+        background: $second-background;
+        border-radius: 3px;
+        margin: 0 40px 0 0;
+        padding: 0;
+
+        .orange {
+            color: $buttons;
+            padding: 5px 10px;
+        }
+
+        .dot-signups {
+            padding: 5px 10px 5px 0;
+        }
+    }
+
+    .dot-box-3 {
+        display: flex;
+        flex-direction: row;
+        border-radius: 3px;
+        margin: 0 40px 0 0;
+        padding: 0;
+
+        .green {
+            color: #2ac46f;
+            padding: 5px 10px;
+        }
+
+        .dot-signups {
+            padding: 5px 10px 5px 0;
+        }
+    }
+}
+
+/* Chart */
+
+.chart {
+  margin: 40px 180px 40px 180px;
+    
+}
+
+#myChart {
+    max-width: 600px;
+    max-height: 300px;
+}
+
+/* Container 3 */
+
+.container-3 {
+    background-color: $nav-letters-1;
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+}
+
+/* Title links */
+
+.title-links-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $second-background;
+
+    .title-links {
+        font-size: 16px;
+        padding-left: 20px;
+        text-transform: uppercase;
+        font-weight: normal;
+        font-weight: bold;
+    }
+}
+
+/* Websites container */
+
+.web-sites-container {
+    flex: 11;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;;
+}
+
+/* Button one container */
+.button-one-container {
+    margin: 20px;
+}
+
+.btn {
+    margin: 20px auto 20px auto;
+    padding: 5px 25px;
+    border-radius: 3px;
+    color: $nav-letters-1;
+    background-color: $buttons;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Table */
+
+.sites-list-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+table {
+    width: 600px;
+    font-size: 14px;
+    margin: 0;
+    border-bottom: 1px solid $nav-letters-2;
+}
+
+tr {
+    display: flex;
+    flex-direction: row;
+
+    &:hover {
+        background-color: $second-background;
+    }
+}
+
+td {
+    border-top: 1px solid $nav-letters-2;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.no-1 {
+    width: 250px;
+    font-weight: bold;    
+    display: flex;
+    justify-content: flex-start;
+}
+
+.no-2 {
+    width: 250px;
+    text-decoration: none;
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #63a8cf;
+    }
+}
+
+.no-3 {
+    width: 50px;
+    font-size: 12px;
+
+    a {
+       color: $buttons; 
+    }
+}
+
+.no-4 {
+    width: 50px;
+    font-size: 12px;
+
+    a {
+        color: $letters;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

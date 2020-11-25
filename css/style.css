@@ -925,13 +925,6 @@ td {
   .nav {
     display: none;
   }
-  .content {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    margin: 0 auto;
-  }
   .container-1 {
     display: -ms-flexbox;
     display: flex;
@@ -947,7 +940,6 @@ td {
         flex: 5;
     -ms-flex-pack: center;
         justify-content: center;
-    margin: auto;
   }
   .container-1 .box-3 {
     -ms-flex: 1;

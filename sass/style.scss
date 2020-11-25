@@ -800,12 +800,6 @@ td {
         display: none;
     }
 
-    .content {
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-    }    
-
     .container-1 {
        display: flex;
        flex-wrap: wrap;
@@ -818,7 +812,6 @@ td {
        .box-2 {
            flex: 5;
            justify-content: center;
-           margin: auto;
        }
 
        .box-3 {

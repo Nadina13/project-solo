@@ -201,7 +201,8 @@ ul {
     .wallet {
         margin: 15px 10px 15px 15px;
         display: flex;
-        flex-direction: center;
+        align-items: center;
+        text-decoration: none;
 
         i {
             color: $letters;
@@ -218,7 +219,7 @@ ul {
     .menu {
         margin: 15px 15px 15px 10px;
         display: flex;
-        flex-direction: center;
+        align-items: center;
         text-decoration: none;
 
         i {
@@ -397,7 +398,7 @@ ul {
     padding: 9px;
 }
 
-/* Statisctic */
+/* Statistic */
 
 .statistic-container {
     flex: 9;
@@ -718,6 +719,12 @@ tr {
 
     &:hover {
         background-color: $second-background;
+
+        .no-3, .no-4 {
+            a {
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -752,6 +759,7 @@ td {
 
     a {
        color: $buttons; 
+       opacity: 0;
     }
 }
 
@@ -761,21 +769,9 @@ td {
 
     a {
         color: $letters;
+        opacity: 0;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .col-1 {flex: 8.333%;}
 .col-2 {flex: 16.667%;}
@@ -789,5 +785,54 @@ td {
 .col-10 {flex: 83.333%;}
 .col-11 {flex: 91.667%;}
 .col-12 {flex: 100%;}
+
+/* Media */
+
+@media (max-width: 767px) {
+
+    .main-container {
+        width: auto;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }    
+
+    .container-1 {
+       display: flex;
+       flex-wrap: wrap;
+       height: auto; 
+
+       .box-1 {
+           display: none;
+       }
+
+       .box-2 {
+           flex: 5;
+           justify-content: center;
+           margin: auto;
+       }
+
+       .box-3 {
+           flex: 1;
+       }
+
+       .box-4 {
+           flex: 5;
+       }
+
+       .box-5 {
+           flex: 1;
+       }
+    }
+}
 
 

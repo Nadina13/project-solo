@@ -197,8 +197,9 @@ ul li span {
   margin: 15px 10px 15px 15px;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: center;
-      flex-direction: center;
+  -ms-flex-align: center;
+      align-items: center;
+  text-decoration: none;
 }
 
 .box-2 .wallet i {
@@ -216,8 +217,8 @@ ul li span {
   margin: 15px 15px 15px 10px;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: center;
-      flex-direction: center;
+  -ms-flex-align: center;
+      align-items: center;
   text-decoration: none;
 }
 
@@ -423,7 +424,7 @@ ul li span {
   padding: 9px;
 }
 
-/* Statisctic */
+/* Statistic */
 .statistic-container {
   -ms-flex: 9;
       flex: 9;
@@ -801,6 +802,10 @@ tr:hover {
   background-color: #e0e2e4;
 }
 
+tr:hover .no-3 a, tr:hover .no-4 a {
+  opacity: 1;
+}
+
 td {
   border-top: 1px solid #e8ebec;
   padding: 10px;
@@ -837,6 +842,7 @@ td {
 
 .no-3 a {
   color: #fc810e;
+  opacity: 0;
 }
 
 .no-4 {
@@ -846,6 +852,7 @@ td {
 
 .no-4 a {
   color: #888585;
+  opacity: 0;
 }
 
 .col-1 {
@@ -906,5 +913,53 @@ td {
 .col-12 {
   -ms-flex: 100%;
       flex: 100%;
+}
+
+/* Media */
+@media (max-width: 767px) {
+  .main-container {
+    width: auto;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+  .nav {
+    display: none;
+  }
+  .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    margin: 0 auto;
+  }
+  .container-1 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
+  }
+  .container-1 .box-1 {
+    display: none;
+  }
+  .container-1 .box-2 {
+    -ms-flex: 5;
+        flex: 5;
+    -ms-flex-pack: center;
+        justify-content: center;
+    margin: auto;
+  }
+  .container-1 .box-3 {
+    -ms-flex: 1;
+        flex: 1;
+  }
+  .container-1 .box-4 {
+    -ms-flex: 5;
+        flex: 5;
+  }
+  .container-1 .box-5 {
+    -ms-flex: 1;
+        flex: 1;
+  }
 }
 /*# sourceMappingURL=style.css.map */

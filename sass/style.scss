@@ -39,8 +39,67 @@ body {
 /* navigation */
 
 .nav {
-    background: $nav-background;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  z-index: 99;
+  background: $nav-background;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-in-out;
+
+  @media(min-width: 1024px) {
+    position: relative;
+    width: auto;
     height: auto;
+    transform: translateX(0);
+  }
+
+  &.is-active {
+    transform: translateX(0);
+  }
+}
+
+.nav .trigger-menu {
+  position: absolute;
+  top: 0;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: $nav-background;
+  color: #fff;
+
+  &:focus {
+    outline: none;
+  }
+
+  @media(min-width: 1024px) {
+    display: none;
+  }
+}
+
+.overlay {
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(#000, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out;
+  
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  @media(min-width: 1024px) {
+    display: none;
+  }
 }
 
 .header{
@@ -410,9 +469,15 @@ ul {
 .data-container-1 {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    margin: 20px 0 0 0;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 10px 0 0 0;
+
+    @media(min-width: 1024px) {
+      flex-direction: row;
+      margin: 20px 0 0 0;
+      justify-content: center;
+    }
 }
 
 .data-box-1 {
@@ -421,9 +486,14 @@ ul {
     align-items: center;
     flex-direction: row; 
     justify-content: space-between;
-    margin: 0 50px 0 0;
+    margin: 0;
     border-bottom: 1px solid $second-background;
     width: 250px;
+
+    @media(min-width: 1024px) {
+        margin: 0 50px 0 0;
+        width: 250px;
+      }
 }
 
 .visit-box {
@@ -455,9 +525,13 @@ ul {
     align-items: center;
     flex-direction: row; 
     justify-content: space-between;
-    margin: 0 30px 0 0;
+    margin: 0;
     border-bottom: 1px solid $second-background;
     width: 250px;
+
+    @media(min-width: 1024px) {
+        width: 250px;
+      }
 }
 
 .net-box {
@@ -488,8 +562,13 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    margin: 10px 0 0 0;
+    flex-direction: column;
+    margin: 0;
+
+    @media(min-width: 1024px) {
+      flex-direction: row;
+      margin: 10px 0 0 0;
+    }
 }
 
 .data-box-3 {
@@ -498,9 +577,14 @@ ul {
     align-items: center;
     flex-direction: row; 
     justify-content: space-between;
-    margin: 0 50px 0 0;
+    margin: 0;
     border-bottom: 1px solid $second-background;
     width: 250px;
+
+    @media(min-width: 1024px) {
+        margin: 0 50px 0 0;
+        width: 250px;
+    }
 }
 
 .ftd-box {
@@ -532,9 +616,13 @@ ul {
     align-items: center;
     flex-direction: row; 
     justify-content: space-between;
-    margin: 0 30px 0 0;
+    margin: 0;
     border-bottom: 1px solid $second-background;
     width: 250px;
+
+    @media(min-width: 1024px) {
+        width: 250px;
+    }
 }
 
 .turn-box {
@@ -562,7 +650,11 @@ ul {
 /* Data container 3 */
 
 .data-container-3 {
-    margin: 70px 0 0 180px;
+    margin: 40px 0 0 50px;
+
+    @media(min-width: 1024px) {
+        margin: 70px 0 0 180px;
+    }
 
     .earnings-chart {
         font-size: 16px;
@@ -585,8 +677,12 @@ ul {
         flex-direction: row;
         background: $second-background;
         border-radius: 3px;
-        margin: 0 40px 0 0;
+        margin: 0 10px 0 0;
         padding: 0;
+
+        @media(min-width: 1024px) {
+          margin: 0 40px 0 0;
+        }
 
         .blue {
             color: #80c5ec;
@@ -603,8 +699,12 @@ ul {
         flex-direction: row;
         background: $second-background;
         border-radius: 3px;
-        margin: 0 40px 0 0;
+        margin: 0 10px 0 0;
         padding: 0;
+
+        @media(min-width: 1024px) {
+          margin: 0 40px 0 0;
+        }
 
         .orange {
             color: $buttons;
@@ -620,7 +720,7 @@ ul {
         display: flex;
         flex-direction: row;
         border-radius: 3px;
-        margin: 0 40px 0 0;
+        margin: 0;
         padding: 0;
 
         .green {
@@ -636,23 +736,33 @@ ul {
 
 /* Chart */
 
-.chart {
-  margin: 40px 180px 40px 180px;
-    
-}
 
+.chart {
+    display: none;
+
+    @media(min-width: 1024px) {
+        display: flex;
+        margin: 40px 180px 40px 180px;
+    } 
+}
+  
 #myChart {
     max-width: 600px;
     max-height: 300px;
 }
 
+
 /* Container 3 */
 
 .container-3 {
-    background-color: $nav-letters-1;
     display: flex;
+    background-color: $nav-letters-1;
     flex-direction: column;
     margin: 12px;
+
+    @media(min-width: 1024px) {
+      display: flex;
+    }
 }
 
 /* Title links */
@@ -702,21 +812,25 @@ ul {
 
 .sites-list-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    
-}
-
-table {
-    width: 600px;
+    align-items: center;
     font-size: 14px;
-    margin: 0;
-    border-bottom: 1px solid $nav-letters-2;
+    border-bottom: 1px solid $nav-letters-2; 
 }
 
-tr {
+.list-box {
     display: flex;
     flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
 
+    @media(min-width: 1024px) {
+        padding: 10px 20px;
+        border-top: 1px solid $nav-letters-2; 
+    }
+    
     &:hover {
         background-color: $second-background;
 
@@ -728,23 +842,26 @@ tr {
     }
 }
 
-td {
-    border-top: 1px solid $nav-letters-2;
-    padding: 10px;
-    display: flex;
-    justify-content: flex-start;
-}
-
 .no-1 {
-    width: 250px;
     font-weight: bold;    
     display: flex;
     justify-content: flex-start;
+    width: 100px;
+
+    @media(min-width: 1024px) {
+        width: 200px;
+    }
 }
 
 .no-2 {
-    width: 250px;
+    width: 100px;
     text-decoration: none;
+    padding: 0;
+    margin: 0;
+
+    @media(min-width: 1024px) {
+        width: 200px;
+    }
 
     a {
         text-decoration: none;
@@ -794,10 +911,6 @@ td {
         width: auto;
         margin: 0 auto;
         font-size: 14px;
-    }
-
-    .nav {
-        display: none;
     }
 
     .container-1 {

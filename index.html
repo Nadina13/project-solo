@@ -9,16 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@100&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
     <div class="main-container">
         <div class="nav col-2">
             <div class="header">
                 <h3 class="name">Just do it</h3>
-                <div class="hamburger">
-                    <a href="#"><i class="fas fa-bars"></i></a>
-                </div>
             </div>
             <div class="list">
                 <ul>
@@ -40,6 +37,9 @@
                 </div>
                 <div class="manager-name">Mikhael E.</div>
             </div>
+            <button class="trigger-menu">
+                <i class="fa fa-bars"></i>
+            </button>
         </div>
         <div class="content col-10">
             <div class="container-1">
@@ -146,68 +146,66 @@
                         <a href="#" class="btn btn-one">+ add new</a>
                     </div>
                     <div class="sites-list-container">
-                        <table>
-                            <tr>
-                                <td class="no-1">Home page</th>
-                                <td class="no-2"><a href="http://homepage.com">http://homepage.com</a></td>
-                                <td class="no-3"><a href="#"><i class="fas fa-link"></i></a></td>
-                                <td class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="no-1">Currently offer</th>
-                                <td class="no-2"><a href="http://currently.com">http://currently.com</a></td>
-                                <td class="no-3"><a href="#"><i class="fas fa-link"></i></a></td>
-                                <td class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="no-1">Biurpix</th>
-                                <td class="no-2"><a href="http://biurpix.com">http://biurpix.com</a></td>
-                                <td class="no-3"><a href="#"><i class="fas fa-link"></i></a></td>
-                                <td class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="no-1">Your Site</th>
-                                <td class="no-2"><a href="http://yoursite.com">http://yoursite.com</a></td>
-                                <td class="no-3"><a href="#"><i class="fas fa-link"></i></a></td>
-                                <td class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="no-1">Google</th>
-                                <td class="no-2"><a href="http://google.com">http://google.com</a></td>
-                                <td class="no-3"><a href="#"><i class="fas fa-link"></i></a></td>
-                                <td class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="no-1">Facebook</th>
-                                <td class="no-2"><a href="http://facebook.com">http://facebook.com</a></td>
-                                <td class="no-3"><a href="#"><i class="fas fa-link"></i></a></td>
-                                <td class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="no-1">Dashboard</th>
-                                <td class="no-2"><a href="http://dashboard.com">http://dashboard.com</a></td>
-                                <td class="no-3"><a href="#"><i class="fas fa-link"></i></a></td>
-                                <td class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="no-1">Blurax</th>
-                                <td class="no-2"><a href="http://blurax.com">http://blurax.com</a></td>
-                                <td class="no-3"><a href="#"><i class="fas fa-link"></i></a></td>
-                                <td class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="no-1">Piece of Wine</th>
-                                <td class="no-2"><a href="http://pieceofwine.com">http://pieceofwine.com</a></td>
-                                <td class="no-3"><a href="#"><i class="fas fa-link"></i></a></td>
-                                <td class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="no-1">Twitter</th>
-                                <td class="no-2"><a href="http://twitter.com">http://twitter.com</a></td>
-                                <td class="no-3"><a href="#"><i class="fas fa-link"></i></a></td>
-                                <td class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-                        </table>
+                        <div class="list-box">
+                            <div class="no-1">Home page</div>
+                            <div class="no-2"><a href="http://homepage.com">http://homepage.com</a></div>
+                            <div class="no-3"><a href="#"><i class="fas fa-link"></i></a></div>
+                            <div class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
+                        </div>
+                        <div class="list-box">
+                            <div class="no-1">Currently offer</div>
+                            <div class="no-2"><a href="http://currently.com">http://currently.com</a></div>
+                            <div class="no-3"><a href="#"><i class="fas fa-link"></i></a></div>
+                            <div class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
+                        </div>
+                        <div class="list-box">
+                            <div class="no-1">Biurpix</div>
+                            <div class="no-2"><a href="http://biurpix.com">http://biurpix.com</a></div>
+                            <div class="no-3"><a href="#"><i class="fas fa-link"></i></a></div>
+                            <div class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
+                        </div>
+                        <div class="list-box">
+                            <div class="no-1">Your Site</div>
+                            <div class="no-2"><a href="http://yoursite.com">http://yoursite.com</a></div>
+                            <div class="no-3"><a href="#"><i class="fas fa-link"></i></a></div>
+                            <div class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
+                        </div>
+                        <div class="list-box">
+                            <div class="no-1">Google</div>
+                            <div class="no-2"><a href="http://google.com">http://google.com</a></div>
+                            <div class="no-3"><a href="#"><i class="fas fa-link"></i></a></div>
+                            <div class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
+                        </div>
+                        <div class="list-box">
+                            <div class="no-1">Facebook</div>
+                            <div class="no-2"><a href="http://facebook.com">http://facebook.com</a></div>
+                            <div class="no-3"><a href="#"><i class="fas fa-link"></i></a></div>
+                            <div class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
+                        </div>
+                        <div class="list-box">
+                            <div class="no-1">Dashboard</div>
+                            <div class="no-2"><a href="http://dashboard.com">http://dashboard.com</a></div>
+                            <div class="no-3"><a href="#"><i class="fas fa-link"></i></a></div>
+                            <div class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
+                        </div>
+                        <div class="list-box">
+                            <div class="no-1">Blurax</div>
+                            <div class="no-2"><a href="http://blurax.com">http://blurax.com</a></div>
+                            <div class="no-3"><a href="#"><i class="fas fa-link"></i></a></div>
+                            <div class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
+                        </div>
+                        <div class="list-box">
+                            <div class="no-1">Piece of Wine</div>
+                            <div class="no-2"><a href="http://pieceofwine.com">http://pieceofwine.com</a></div>
+                            <div class="no-3"><a href="#"><i class="fas fa-link"></i></a></div>
+                            <div class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
+                        </div>
+                        <div class="list-box">
+                            <div class="no-1">Twitter</div>
+                            <div class="no-2"><a href="http://twitter.com">http://twitter.com</a></div>
+                            <div class="no-3"><a href="#"><i class="fas fa-link"></i></a></div>
+                            <div class="no-4"><a href="#"><i class="fas fa-trash-alt"></i></a></div>
+                        </div>
                     </div>
                     <div class="button-one-container">
                         <a href="#" class="btn btn-one">+ add new</a>
@@ -216,6 +214,7 @@
             </div>
         </div>
     </div>
+    <div class="overlay"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="js/script.js"></script>
 </body>

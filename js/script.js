@@ -1,7 +1,7 @@
 'use strict';
 
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
+const ctx = document.getElementById('myChart').getContext('2d');
+const chart = new Chart(ctx, {
     // 1
     type: 'bar',
     data: {
@@ -32,4 +32,18 @@ var chart = new Chart(ctx, {
             hidden: true,
         }]
     },
+});
+
+const triggerMenu = document.querySelector('.trigger-menu');
+const sidebar = document.querySelector('.nav');
+const overlay = document.querySelector('.overlay');
+
+triggerMenu.addEventListener('click', function() {
+    sidebar.classList.toggle('is-active');
+    overlay.classList.toggle('is-active');
+});
+
+overlay.addEventListener('click', function() {
+    sidebar.classList.remove('is-active');
+    overlay.classList.remove('is-active');
 });

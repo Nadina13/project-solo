@@ -979,6 +979,7 @@ ul li span {
   text-decoration: none;
   padding: 0;
   margin: 0;
+  text-align: left;
 }
 
 @media (min-width: 1024px) {
